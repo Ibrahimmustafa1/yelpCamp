@@ -2,10 +2,8 @@
  My first Fullstack app using 
   
 # Demo
+https://yelpcamp-camps.herokuapp.com/
 
-<div align="center">
-  <img src="demo/demo.gif" />
-</div>
 
 
 # Features
