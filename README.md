@@ -2,9 +2,7 @@
  My first Fullstack app using 
   
 # Demo
-https://yelpcamp-camps.herokuapp.com/
-
-
+<a href="https://yelpcamp-camps.herokuapp.com/" target="_blank">YelpCamp</a>
 
 # Features
 
