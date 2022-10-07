@@ -1,0 +1,57 @@
+<% layout('./layouts/boilerplate.ejs') %>
+
+
+         
+        <% if(userCampgrounds.length > 0){ %>
+            <div id="map" style="width: 100%; height: 400px;"></div>
+
+            <div class="row mt-5">
+                <% for( let i=0; i < userCampgrounds.length; i++ ) { %>
+        
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <% if (userCampgrounds[i].imgs[0]) { %>
+                                <img src="<%=userCampgrounds[i].imgs[0].url%>" alt="" class="w-100 card-img-top">
+        
+                                <% } %>
+        
+                                    <div class="card-body">
+        
+                                        <h5 class="card-title">
+                                            <%=userCampgrounds[i].title %>
+                                        </h5>
+        
+        
+                                        <p class="card-text">
+                                            <%=userCampgrounds[i].description %>
+                                        </p>
+                                        <p class="card-text text-muted">
+                                            <small>
+                                                <%=userCampgrounds[i].location%>
+                                            </small>
+                                        </p>
+                                        <div class="d-flex justify-content-end">
+                                            <a href="/campgrounds/<%=userCampgrounds[i]._id%>" class="btn btn-primary">View
+                                                Campground</a>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+        
+        
+        
+        
+                    <% } %>
+        
+            </div>
+          <% } else{ %>  
+            <p class="alert alert-danger">U Did not Have Any Campgrounds</p>
+
+         <% } %>
+         
+    <script>
+
+        let campgrounds =<%-JSON.stringify(userCampgrounds)%>;
+        console.log(campgrounds);
+    </script>
+    <script src="/clusterMap.js"></script>

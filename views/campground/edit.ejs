@@ -1,0 +1,88 @@
+<% layout('./layouts/boilerplate.ejs') %>
+    <h1>Edit Campground</h1>
+
+
+
+    <div class="row justify-content-center">
+        <h1 class="text-center">Edit Campground</h1>
+        <div class="col-md-6">
+            <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form"
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">
+                        Title:
+                    </label>
+                    <input class="form-control" type="text" id="title" value="<%=campground.title %> "
+                        name="camp[title]" placeholder="Title Of Camp" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Looks Bad!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input value="<%=campground.location %> " class="form-control" type="text" id="location"
+                        name="camp[location]" placeholder="location Of Camp" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Looks Bad!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="img" class="form-label"></label>
+                    <div class="mb-3">
+                        <label for="formFileMultiple" class="form-label">Upload Images</label>
+                        <input class="form-control" name="camp[img]" type="file" id="formFileMultiple" multiple>
+                    </div>
+                </div>
+
+                <div class="mb-3 d-flex flex-wrap justify-content-center">
+                    <% for( let i=0; i < campground.imgs.length; i++ ) { %>
+                        <img class="m-2 w-25" src="<%= campground.imgs[i].url%>" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" name="deleteImgs[]" value="<%=campground.imgs[i].filename%>">
+                        </div>
+                        <% } %>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price :</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input value="<%=campground.price%> " id="price" type="text" name="camp[price]"
+                            class="form-control" aria-label="Amount (to the nearest dollar)" required>
+                        <span class="input-group-text">.00</span>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Looks Bad!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea class="form-control" name="camp[description]" id="description" name="camp[description]"
+                        placeholder="description Of Camp" required><%=campground.description%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Looks Bad!
+                    </div>
+                </div>
+
+
+                <button class="btn btn-info mb-3">Update Campground</button>
+
+            </form>
+            <a href="/campgrounds/<%=campground._id%>">Back To campground</a>
+        </div>
+    </div>
