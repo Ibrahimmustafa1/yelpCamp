@@ -7,7 +7,7 @@
 # Features
 
 - Responsive web design (RWD)
-- User authentication (Login/Register/Logout) and authorization (Post/Like/Edit)
+- User authentication (Login/Register/Logout) and authorization (Post/Edit)
 - Flash messages responding to users' interaction
 - Refactored with ES6 and ES7 syntax (eg: async/await)
 - RESTful API
@@ -50,10 +50,8 @@ POST      /campgrounds            Create a new campground to database
 GET       /campgrounds/new        Request the campground adding page
 GET       /campgrounds/:id        Show the campground information
 PUT       /campgrounds/:id        Update campground information (all)
-PATCH     /campgrounds/:id        Update campground information (part)
 DELETE    /campgrounds/:id        Delete a campground
 GET       /campgrounds/:id/edit   Request the campground editing page
-POST      /campgrounds/:id/likes  Like the campground
 
 -------------------------------------------------------------------------
 Comments Route
@@ -67,16 +65,14 @@ DELETE    /campgrounds/:id/comments/:cid  Delete comment
 # Technologies
 
 ## Frontend
-
-- [Bootstrap](https://getbootstrap.com/)
-- [ejs](https://ejs.co/)
+- Bootstrap
+- ejs
 
 ## Backend
+- node js 
+- express
+- mongodb
 
-- [express](https://gulpjs.com/)
-- [mongodb](https://webpack.js.org/concepts/)
-
-Check [`package.json`](https://github.com/Hsins/udemy_Yelp-Camp/blob/master/package.json) file for more information.
 
 # Getting Started
 
