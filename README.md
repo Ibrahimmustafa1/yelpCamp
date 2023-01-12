@@ -3,8 +3,8 @@
   
 # Demo
 
-LIVE: <a href="https://yelpcamp-haox.onrender.com/">https://yelpcamp-haox.onrender.com/</a>
-https://user-images.githubusercontent.com/85252957/208171496-d8c5fa9c-3649-448d-8655-b097473e5c5e.mp4
+LIVE: <a href="https://yelpcamp-haox.onrender.com/">YElpCamp</a>
+
 
 
 
