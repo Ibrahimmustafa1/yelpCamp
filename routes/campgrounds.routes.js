@@ -1,5 +1,5 @@
 const router = require('express').Router({ mergeParams: true });;
-const catchAsync = require('../utils/catchAsync')
+const catchAsync = require('../utils/CatchAsync')
 const { validateCampground } = require('../validation')
 const { isLogedIn, isAuthor } = require('../midlleware')
 const { index, renderNewForm, createCampground, showCampground, renderEditForm, updateCampground, deleteCampground } = require('../controllers/campgrounds.controller')

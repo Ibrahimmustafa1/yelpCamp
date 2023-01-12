@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const passport = require('passport')
-const catchAsync = require('../utils/catchAsync')
+const catchAsync = require('../utils/CatchAsync')
 const { isLogedIn } = require('../midlleware')
 const { renderRegister, register, login, renderLogin, logout,userCamps } = require('../controllers/user.controller')
 router.get('/register', renderRegister)
